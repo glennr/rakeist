@@ -1,0 +1,34 @@
+= Rake-ist
+
+Common rake tasks for a Rails project.
+
+== Install
+
+To install as a gem, add the following to config/environment.rb:
+
+  config.gem 'rakeist'
+
+Rake tasks are not automatically loaded from gems, so you’ll need to add the following to your Rakefile:
+
+  begin
+    require 'rakeist/tasks'
+  rescue LoadError
+    STDERR.puts "Run `rake gems:install` to install rakeist"
+  end
+
+To install as a plugin:
+
+  script/plugin install git://github.com/glennr/rakeist.git
+    
+== Usage
+
+  rake setup        #Install gems and do db:setup
+
+== Contributors
+
+Glenn Roberts (glenn.roberts@siyelo.com)
+
+== License
+
+Homepage:: http://github.com/glennr/rakeist
+License:: Copyright (c) 2009 Glenn Roberts <mailto:glenn.roberts@siyelo.com>, released under the MIT license.
